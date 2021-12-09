@@ -1,5 +1,3 @@
-const ndef = new NDEFReader();
-
 const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
 
 async function readTag() {
