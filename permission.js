@@ -4,19 +4,6 @@
 
 window.addEventListener("load", function() {
 
-    var toggle = document.querySelector("#toggle");
-    toggle.classList.add("instant");
-    if (window.location.protocol == "https:") {
-        toggle.classList.add("https");
-        toggle.protocol = "http:";
-    } else if (window.location.protocol == "http:") {
-        toggle.classList.add("http");
-        toggle.protocol = "https:";
-    }
-    setTimeout(function() {
-        toggle.classList.remove("instant");
-    }, 10);
-
     function displayOutcome(type, outcome) {
         return function() {
             var argList = [outcome, type].concat([].slice.call(arguments));
@@ -53,11 +40,5 @@ window.addEventListener("load", function() {
     };
     
     document.getElementById("nfc").addEventListener('click', register["nfc"]);
-    
-    // for (var type in register) {
-    //   document.getElementById(type).addEventListener('click',
-    //     register[type]
-    //   );
-    // }
     
 });
