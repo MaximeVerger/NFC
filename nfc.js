@@ -80,4 +80,4 @@ var register = {
     },
 }
 
-document.getElementById('nfc').addEventListener('click', 'nfc')
+document.getElementById('nfc').addEventListener('click', register['nfc'])
