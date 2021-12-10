@@ -650,11 +650,13 @@ window.addEventListener("load", function() {
         }
       }
     };
+
+    document.getElementById("nfc").addEventListener('click', register["nfc"]);
   
-    for (var type in register) {
-      document.getElementById(type).addEventListener('click',
-        register[type]
-      );
-    }
+    // for (var type in register) {
+    //   document.getElementById(type).addEventListener('click',
+    //     register[type]
+    //   );
+    // }
   
   });
