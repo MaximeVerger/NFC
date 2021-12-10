@@ -113,6 +113,6 @@ window.addEventListener("load", function() {
         },
     }
 
-    document.getElementById('nfc').addEventListener('click', register['nfc'])
+    document.getElementById(nfc).addEventListener('click', register[nfc])
 
 });
