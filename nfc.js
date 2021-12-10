@@ -63,6 +63,24 @@
 //     logElement.innerHTML += data + '\n';
 // }
 
+function displayOutcome(type, outcome) {
+    return function() {
+        var argList = [outcome, type].concat([].slice.call(arguments));
+        switch(outcome) {
+            case "success":
+            console.info.apply(console, argList);
+            break;
+            case "error":
+            console.error.apply(console, argList);
+            break;
+            default:
+            console.log.apply(console, argList);
+        }
+        document.getElementById(type).classList.remove('success', 'error', 'default');
+        document.getElementById(type).classList.add(outcome);
+    };
+};
+
 var register = {
     "nfc": function() {
         if ('NDEFReader' in window) {
