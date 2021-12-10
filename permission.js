@@ -1,7 +1,3 @@
-
-//  - Information about clearing settings in Chrome (can't link to chrome:// URLs)
-//  - Indicate if permissions are already granted, if the relevant API allows it.
-
 window.addEventListener("load", function() {
 
     function displayOutcome(type, outcome) {
