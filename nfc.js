@@ -9,6 +9,7 @@
 
 const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
 consoleLog(nfcPermissionStatus)
+consoleLog("nfcPermissionStatus")
 
 // if (nfcPermissionStatus.state === "granted") {
 //     // NFC access was previously granted, so we can start NFC scanning now.
