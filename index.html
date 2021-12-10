@@ -30,15 +30,14 @@
     <!-- Origin trial token needed for Web USB -->
     <meta http-equiv="origin-trial" content="AsxscPRBb7U1KJIlQrsFrZ3ea0LHwRhNkbqBKsSuLP5y3sqIqnanjKbGk4oe5+/HkownaJhI2wP6m1S70Y8xkQsAAABUeyJvcmlnaW4iOiAiaHR0cHM6Ly9wZXJtaXNzaW9uLnNpdGU6NDQzIiwgImZlYXR1cmUiOiAiV2ViVVNCIiwgImV4cGlyeSI6IDE0NjUzODkxOTd9">
     <title>permission.site</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="app-icon.png"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> -->
     <script src="permission.js"></script>
 </head>
 <body>
-    <div class="before"></div>
+    <!-- <div class="before"></div>
     <div class="content">
-
     <div id="toggle-wrapper">
         <a id="toggle" class="neutral" href="" title="Switch between HTTP and HTTPS.">
             <span class="http">HTTP</span>
@@ -47,8 +46,13 @@
             </div>
             <span class="https">HTTPS</span>
         </a>
-    </div>
-    <button id="nfc">NFC</button>
+    </div> -->
+    <button id="nfc">Permission NFC</button>
+    <p>
+        <button onclick="readTag()">Test NFC Read</button>
+        <button onclick="writeTag()">Test NFC Write</button>
+    </p>
+    <pre id="log"></pre>
     </div>
 
 </body>
