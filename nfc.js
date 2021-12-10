@@ -96,6 +96,24 @@ window.addEventListener("load", function() {
         };
     };
 
+    function displayOutcomeForNotifications(outcome) {
+        switch(outcome) {
+            case "granted":
+                console.info(outcome, "notifications");
+                document.getElementById("notifications").classList.add("success");
+                break;
+            case "denied":
+            case "default":
+                // "default" is supposed to be like "denied", except the user hasn't made an explicit decision yet.
+                // https://notifications.spec.whatwg.org/#permission-model
+                console.error(outcome, "notifications");
+                document.getElementById("notifications").classList.add("error");
+                break;
+            default:
+                throw "Unknown notification API response.";
+        }
+    };
+
     var register = {
         "nfc": function() {
             if ('NDEFReader' in window) {
@@ -111,8 +129,11 @@ window.addEventListener("load", function() {
                 displayOutcome("nfc", "error")("NDEFReader is not available");
             }
         },
+        "notifications": function () {
+            Notification.requestPermission(displayOutcomeForNotifications);
+        },
     }
 
-    document.getElementById(nfc).addEventListener('click', register[nfc])
+    document.getElementById("notifications").addEventListener('click', register["notifications"])
 
 });
